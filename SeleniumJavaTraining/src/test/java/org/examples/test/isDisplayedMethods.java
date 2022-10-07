@@ -11,6 +11,7 @@ public class isDisplayedMethods {
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://tutorialsninja.com/demo/index.php?route=account/register");
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.MILLISECONDS);
 
         if (driver.findElement(By.name("newsletter")).isDisplayed()){
             if (!driver.findElement(By.xpath("//input[@name='newsletter'])[1]")).isSelected()){
